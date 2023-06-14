@@ -1,0 +1,46 @@
+<app-logged-in-layout>
+        <div class="container">
+            <div>
+                <h1 class="title has-text-centered">Usuarios</h1>
+                <app-user-list-filter [firstName]="userSpec.firstName"
+                    [lastName]="userSpec.lastName"
+                    [email]="userSpec.email"
+                    (setSpecEvent)="setSpec($event)"></app-user-list-filter>
+            </div>
+
+            <div class="my-2">
+                <table class="table is-fullwidth is-hoverable">
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th (click)="orderBy('firstName')" class="clickable">FirstName</th>
+                        <th (click)="orderBy('lastName')" class="clickable">LastName</th>
+                        <th>BirthDate</th>
+                        <th (click)="orderBy('email')" class="clickable">Email</th>
+                        <th>Phone number</th>
+                        <th>Address</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let person of userList" 
+                            (click)="setSelected(person.id)" [ngClass]="selectedRow===person.id ? 'is-selected':''">
+                        <th>{{person.id}}</th>
+                        <td><a [routerLink]="consultUserURL+person.id">{{person.firstName}}</a></td>
+                        <td>{{person.lastName}}</td>
+                        <td>{{person.birthDate}}</td>
+                        <td>{{person.email}}</td>
+                        <td>{{person.phoneNumber}}</td>
+                        <td>{{person.address}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+
+            <div>
+                <app-pagination (setPageEvent)="setPage($event)"
+                    [activePage]="activePage"
+                    [numberOfPages]="numberOfPages"
+                    [totalRecords]="totalRecords"></app-pagination>
+            </div>
+        </div>
+</app-logged-in-layout>

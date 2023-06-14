@@ -1,0 +1,35 @@
+<div>
+    <form name="loginForm" [formGroup]="userFilterForm" (ngSubmit)="submit($event)">
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">Filtrar por:</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <input type="text" class="input form-control"
+                            id="firstname_input" placeholder="Nombre" name="firstName" formControlName="firstName">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input type="text" class="input form-control"
+                            id="lastName_input" placeholder="Apellido" name="lastName" formControlName="lastName">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input type="text" class="input form-control"
+                            id="asd" placeholder="Correo electrónico" name="email" formControlName="email">
+                    </div>
+                </div>
+                <div class="field text-center">
+                    <button type="submit" class="button is-info">Consultar</button>
+                </div>
+                <div class="field text-center">
+                    <a [routerLink]="ADD_USER_PATH" class="button is-primary">Agregar</a>
+                </div>
+              </div>
+        </div>
+    </form>
+</div>

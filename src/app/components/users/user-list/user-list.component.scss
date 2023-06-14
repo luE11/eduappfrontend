@@ -1,0 +1,11 @@
+:host {
+    height: 100%;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+tr.is-selected {
+    background-color: darkcyan;
+}

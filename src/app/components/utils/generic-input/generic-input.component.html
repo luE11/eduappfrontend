@@ -1,0 +1,11 @@
+<div class="form-group field mb-2" [formGroup]="formGroup">
+    <label for="{{id}}" class="label">{{label}}</label>
+    <div class="control">
+        <input type="{{type}}" class="input form-control{{' '+classes}}" [ngClass]="{'is-danger': isFieldInvalid()}"
+            id="{{id}}" placeholder="{{label}}" name="{{name}}" formControlName="{{name}}">
+    </div>
+    <div *ngIf="isFieldInvalid()"
+        class="help is-danger">
+        <ng-content select="[errors]" ></ng-content>
+    </div>
+</div>

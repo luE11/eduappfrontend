@@ -1,0 +1,26 @@
+<div>
+    <nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">
+        <a class="pagination-previous" [ngClass]="activePage==1?'is-disabled':''"
+            (click)="setPage((activePage>1) ? (activePage-1) : 1)">Previous</a>
+        <a class="pagination-next" [ngClass]="activePage==numberOfPages?'is-disabled':''"
+            (click)="setPage((activePage < numberOfPages) ? (activePage+1): numberOfPages)">Next page</a>
+        <ul class="pagination-list">
+            <li><a class="pagination-link" aria-label="Goto page 1" (click)="setPage(1)">1</a></li>
+            <li><span class="pagination-ellipsis">&hellip;</span></li>
+            <li>
+                <a class="pagination-link" [ngClass]="activePage==1?'is-disabled':''"
+                    (click)="setPage((activePage>1) ? (activePage-1) : 1)">{{ (activePage>1) ? (activePage-1) : 1 }}
+                </a>
+            </li>
+            <li><a class="pagination-link is-current" aria-current="page">{{activePage}}</a></li>
+            <li>
+                <a class="pagination-link" [ngClass]="activePage==numberOfPages?'is-disabled':''" 
+                (click)="setPage((activePage < numberOfPages) ? (activePage+1): numberOfPages)">{{(activePage < numberOfPages) ? (activePage+1): numberOfPages}}
+                </a>
+            </li>
+            <li><span class="pagination-ellipsis">&hellip;</span></li>
+            <li><a class="pagination-link" (click)="setPage(numberOfPages)">{{numberOfPages}}</a></li>
+        </ul>
+    </nav>
+    <p class="has-text-centered">{{(totalRecords>0)?'Se han encontrado '+totalRecords+' registros': "No se han encontrado resultados"}}</p>
+</div>

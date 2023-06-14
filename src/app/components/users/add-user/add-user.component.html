@@ -1,0 +1,28 @@
+<app-logged-in-layout>
+    <div class="container">
+        <div class="mb-5">
+            <h1 class="title has-text-centered">Agregar usuario</h1>
+        </div>
+        <div class="column is-10 is-offset-1 box p-5">
+            <form name="loginForm">
+                <div class="form-group field">
+                    <label for="username_input" class="label">Nombre de usuario</label>
+                    <div class="control">
+                        <input type="text" class="input form-control" 
+                            id="username_input" placeholder="Ingrese su documento" name="username" formControlName="username">
+                    </div>
+                </div>
+                <div class="form-group field">
+                    <label for="password_input" class="label">Contraseña</label>
+                    <div class="control">
+                        <input type="password" class="input form-control" 
+                            id="password_input" placeholder="Contraseña" name="password" formControlName="password">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="button is-info">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</app-logged-in-layout>

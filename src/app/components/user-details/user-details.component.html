@@ -1,0 +1,37 @@
+<app-logged-in-layout>
+    <div class="column is-10 is-offset-1 mt-5">
+        <h1 class="title is-1 has-text-centered">User Details</h1>
+        <div class="box">
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <tr>
+                    <th>Id</th>
+                    <td>{{person?.id}}</td>
+                </tr>
+                <tr>
+                    <th>First name</th>
+                    <td>{{person?.firstName}}</td>
+                </tr>
+                <tr>
+                    <th>Last name</th>
+                    <td>{{person?.lastName}}</td>
+                </tr>
+                <tr *ngIf="person?.birthDate!=null">
+                    <th>Birth date</th>
+                    <td>{{person?.birthDate}}</td>
+                </tr>
+                <tr *ngIf="person?.email!=null">
+                    <th>Email</th>
+                    <td>{{person?.email}}</td>
+                </tr>
+                <tr *ngIf="person?.phoneNumber!=null">
+                    <th>Phone number</th>
+                    <td>{{person?.phoneNumber}}</td>
+                </tr>
+                <tr *ngIf="person?.address!=null">
+                    <th>Address</th>
+                    <td>{{person?.address}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</app-logged-in-layout>
